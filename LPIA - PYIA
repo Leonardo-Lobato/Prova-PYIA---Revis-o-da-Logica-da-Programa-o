@@ -1,0 +1,20 @@
+usuario_esperado = "admin"
+senha_esperada = "1234"
+
+tentativas_restantes = 3
+
+while tentativas_restantes > 0:
+    entrada_usuario = input("Informe o nome de usuário: ")
+    entrada_senha = input("Informe a senha: ")
+
+    if entrada_usuario == usuario_esperado and entrada_senha == senha_esperada:
+        print("Acesso concedido! Bem-vindo!")
+        break
+    else:
+        tentativas_restantes -= 1
+        if tentativas_restantes > 0:
+            print(f"Dados incorretos. Você ainda tem {tentativas_restantes} chance(s).")
+        else:
+            print("Você excedeu o limite de tentativas. O acesso está bloqueado.")
+            for _ in range(3):
+                print("ACESSO BLOQUEADO")
